@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sankhya Repo Updater</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --card: #141414;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #a3a3a3;
+    --accent: #2dd4bf;
+    --accent-dim: rgba(45, 212, 191, 0.12);
+    --code-bg: #1f1f1f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+  .badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(45, 212, 191, 0.35);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: 40px; margin: 0 0 20px; letter-spacing: -0.01em; }
+  h2 { font-size: 24px; margin: 48px 0 16px; letter-spacing: -0.01em; }
+  p { color: var(--text); margin: 0 0 16px; }
+  .lead { color: var(--muted); font-size: 17px; }
+  code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-family: "SF Mono", Consolas, Monaco, monospace;
+    font-size: 0.9em;
+    color: #d1d5db;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 20px 0;
+  }
+  .checklist { list-style: none; margin: 0; padding: 0; }
+  .checklist li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+  }
+  .checklist li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  ul.plain, ol.steps { padding-left: 0; margin: 0 0 16px; list-style: none; }
+  ul.plain li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  ul.plain li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: var(--muted);
+  }
+  ol.steps { counter-reset: step; }
+  ol.steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 22px;
+  }
+  ol.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ol.steps li strong { color: var(--text); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0 24px; }
+  .footer { color: var(--muted); font-size: 13px; text-align: center; }
+  a { color: var(--accent); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #062420;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin: 4px 0 28px;
+  }
+  .btn:hover { filter: brightness(1.05); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="badge">⟳ GUIA DE INSTALAÇÃO</span>
+  <h1>Sankhya Repo Updater</h1>
+  <p class="lead">Um pacote que verifica sozinho, todo dia, se os módulos Sankhya têm versão nova e atualiza sem ninguém precisar lembrar ou pedir. Esta versão se configura sozinha, não precisa editar nenhum arquivo.</p>
+
+  <a class="btn" href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">⬇ Baixar sankhya-repo-updater-template.zip</a>
+
+  <h2>Recursos</h2>
+  <div class="card">
+    <ul class="checklist">
+      <li>Descobre sozinho quais repositórios Sankhya existem no computador — não precisa informar caminho de nada</li>
+      <li>Uma tarefa agendada roda 1x por dia, testando a VPN antes de tentar qualquer coisa</li>
+      <li>Um atalho na área de trabalho pra rodar na hora, quando quiser (ex: assim que conectar a VPN de manhã)</li>
+      <li>Log de cada execução e aviso na tela quando algo for atualizado ou der erro</li>
+    </ul>
+  </div>
+
+  <h2>Antes de começar</h2>
+  <ul class="plain">
+    <li>Windows com PowerShell (já vem instalado) e Git</li>
+    <li>Os repositórios que você quer manter atualizados já clonados (<code>git clone</code>) em algum lugar do computador</li>
+    <li>VPN da Sankhya (FortiClient) configurada e funcionando</li>
+    <li>FortiClient fixado na barra de tarefas (clique direito no ícone dele → "Fixar na barra de tarefas") — só é obrigatório se for usar a VPN automática opcional</li>
+    <li>O arquivo <code>sankhya-repo-updater-template.zip</code> — baixe <a href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">aqui no Drive</a></li>
+  </ul>
+
+  <h2>Instalação automática</h2>
+  <p>Caminho rápido: você não edita nada. O instalador varre o computador, encontra os repositórios sozinho e já deixa tudo funcionando.</p>
+  <ol class="steps">
+    <li><strong>Extraia o pacote</strong>: Baixe o <code>sankhya-repo-updater-template.zip</code> <a href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">no Drive</a> e descompacte em qualquer pasta (não precisa ser dentro da pasta dos projetos).</li>
+    <li><strong>Dê 2 cliques em <code>Instalar-Automatico.bat</code></strong>. Uma janela preta de console abre, mostra o progresso, e ao final aparece uma caixa de mensagem com o resultado. Aperte qualquer tecla pra fechar o console quando terminar. O script procura pastas com repositório git cujo remoto aponte para <code>gitlab.sankhya.com.br</code>. Pode levar 1–2 minutos na primeira vez.</li>
+    <li><strong>Confira o resumo</strong>: Uma janela mostra quais repositórios foram encontrados e configurados, o horário da checagem diária e o nome do atalho criado na área de trabalho.</li>
+  </ol>
+
+  <h2>No dia a dia</h2>
+  <p>Todo dia, no horário padrão das 11h, a automação atualiza os projetos sozinha. Se a VPN não estiver conectada nesse momento, a automação faz a conexão primeiro e, em seguida, segue com a atualização normalmente.</p>
+  <p>Se por algum motivo a automação for interrompida e não conseguir concluir o processo, dá pra rodar na mão pelo atalho <strong>Atualizar Módulos</strong> da área de trabalho — o clique manual nele inicia o mesmo processo padrão.</p>
+
+  <h2>VPN automática (opcional)</h2>
+  <p>Por padrão, se a VPN cair, o pacote só abre o FortiClient e espera você clicar em "Conectar". Ative <code>"vpnAutoConnect": true</code> no <code>config.json</code> pra ele clicar sozinho (opcional, vem desligado).</p>
+  <p>Com isso ligado, o pacote conecta a VPN sozinho sempre que ela cair — no atalho manual e na tarefa agendada.</p>
+  <p>Ele só faz isso se:</p>
+  <ul class="plain">
+    <li>FortiClient fixado na barra de tarefas</li>
+    <li>Sessão SSO já autenticada no navegador</li>
+  </ul>
+  <p>Faltando um dos dois, tudo volta ao normal: abre a janela e avisa, sem quebrar nada.</p>
+
+  <h2>Desinstalar</h2>
+  <p>Dê 2 cliques em <code>uninstall.bat</code>. Remove a tarefa agendada e o atalho da área de trabalho (os logs ficam, se quiser apagar é manual).</p>
+
+  <h2>Pacote: sankhya-repo-updater-template</h2>
+  <table>
+    <thead><tr><th>Arquivo</th><th>Função</th></tr></thead>
+    <tbody>
+      <tr><td><code>Instalar-Automatico.bat</code></td><td>instalador sem configuração manual — descobre os repositórios sozinho</td></tr>
+      <tr><td><code>install.bat</code></td><td>instalador manual — usa o <code>config.json</code> preenchido à mão</td></tr>
+      <tr><td><code>uninstall.bat</code></td><td>remove a tarefa agendada e o atalho</td></tr>
+      <tr><td><code>config.json</code></td><td>configuração (gerada sozinha pelo instalador automático, ou editada à mão)</td></tr>
+      <tr><td><code>Atualizar-Agora.bat</code></td><td>o que o atalho da área de trabalho executa (verificação manual, com janela de resultado)</td></tr>
+      <tr><td><code>update-sankhya-modules.bat</code></td><td>o que a tarefa agendada executa sozinha, 1x por dia — não precisa clicar nele</td></tr>
+      <tr><td><code>logs\</code></td><td>histórico de cada execução</td></tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <p class="footer">sankhya-repo-updater-template · git fetch · git pull --ff-only · sem surpresas</p>
+
+</div>
+</body>
+</html>
