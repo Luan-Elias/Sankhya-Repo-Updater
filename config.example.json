@@ -1,0 +1,11 @@
+{
+  "reposRoot": "",
+  "repoNames": [],
+  "repoPaths": [],
+  "gitHost": "gitlab.sankhya.com.br",
+  "taskName": "Sankhya-UpdateModules",
+  "scheduleTime": "11:00",
+  "discardMode": "stash",
+  "shortcutName": "Atualizar modulos Sankhya",
+  "vpnAutoConnect": false
+}

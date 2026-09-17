@@ -1,0 +1,65 @@
+{
+  "name": "sankhya-repo-updater",
+  "displayName": "Sankhya Repo Updater",
+  "description": "Atualiza os repositorios Sankhya sozinho ao abrir o VS Code, conectando a VPN automaticamente se precisar.",
+  "version": "1.0.3",
+  "publisher": "sankhya-internal",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sankhyaUpdater.updateNow",
+        "title": "Sankhya: Atualizar Agora"
+      },
+      {
+        "command": "sankhyaUpdater.discoverRepos",
+        "title": "Sankhya: Descobrir Repositorios"
+      },
+      {
+        "command": "sankhyaUpdater.showLog",
+        "title": "Sankhya: Ver Log"
+      }
+    ],
+    "configuration": {
+      "title": "Sankhya Repo Updater",
+      "properties": {
+        "sankhyaUpdater.gitHost": {
+          "type": "string",
+          "default": "gitlab.sankhya.com.br",
+          "description": "Host git usado para testar conectividade/VPN e para a descoberta automatica de repositorios."
+        },
+        "sankhyaUpdater.repoPaths": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": [],
+          "description": "Caminhos completos dos repositorios a manter atualizados. Vazio = rode 'Sankhya: Descobrir Repositorios' para preencher sozinho."
+        },
+        "sankhyaUpdater.discardMode": {
+          "type": "string",
+          "enum": ["stash", "hard"],
+          "enumDescriptions": [
+            "Guarda alteracoes nao commitadas em stash antes de atualizar (reversivel, recomendado)",
+            "Descarta alteracoes nao commitadas para sempre antes de atualizar (sem volta - use com cautela)"
+          ],
+          "default": "stash",
+          "description": "O que fazer com alteracoes locais nao commitadas antes de atualizar um repositorio."
+        },
+        "sankhyaUpdater.vpnAutoConnect": {
+          "type": "boolean",
+          "default": false,
+          "description": "Tentar conectar a VPN (FortiClient) automaticamente quando estiver desconectada. Requer o FortiClient fixado na barra de tarefas. So funciona de forma confiavel se a janela do FortiClient ja estiver aberta - veja o README."
+        },
+        "sankhyaUpdater.updateOnStartup": {
+          "type": "boolean",
+          "default": true,
+          "description": "Rodar a verificacao automaticamente sempre que o VS Code abrir."
+        }
+      }
+    }
+  }
+}
