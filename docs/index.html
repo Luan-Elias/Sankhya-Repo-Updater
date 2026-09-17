@@ -125,6 +125,19 @@
   hr { border: none; border-top: 1px solid var(--border); margin: 48px 0 24px; }
   .footer { color: var(--muted); font-size: 13px; text-align: center; }
   a { color: var(--accent); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #062420;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    margin: 4px 0 28px;
+  }
+  .btn:hover { filter: brightness(1.05); }
 </style>
 </head>
 <body>
@@ -133,6 +146,8 @@
   <span class="badge">⟳ GUIA DE INSTALAÇÃO</span>
   <h1>Sankhya Repo Updater</h1>
   <p class="lead">Um pacote que verifica sozinho, todo dia, se os módulos Sankhya têm versão nova e atualiza sem ninguém precisar lembrar ou pedir. Esta versão se configura sozinha, não precisa editar nenhum arquivo.</p>
+
+  <a class="btn" href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">⬇ Baixar sankhya-repo-updater-template.zip</a>
 
   <h2>Recursos</h2>
   <div class="card">
@@ -150,13 +165,13 @@
     <li>Os repositórios que você quer manter atualizados já clonados (<code>git clone</code>) em algum lugar do computador</li>
     <li>VPN da Sankhya (FortiClient) configurada e funcionando</li>
     <li>FortiClient fixado na barra de tarefas (clique direito no ícone dele → "Fixar na barra de tarefas") — só é obrigatório se for usar a VPN automática opcional</li>
-    <li>O arquivo <code>sankhya-repo-updater-template.zip</code> — baixe no Google Drive (link a confirmar)</li>
+    <li>O arquivo <code>sankhya-repo-updater-template.zip</code> — baixe <a href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">aqui no Drive</a></li>
   </ul>
 
   <h2>Instalação automática</h2>
   <p>Caminho rápido: você não edita nada. O instalador varre o computador, encontra os repositórios sozinho e já deixa tudo funcionando.</p>
   <ol class="steps">
-    <li><strong>Extraia o pacote</strong>: Baixe o <code>sankhya-repo-updater-template.zip</code> no Drive e descompacte em qualquer pasta (não precisa ser dentro da pasta dos projetos).</li>
+    <li><strong>Extraia o pacote</strong>: Baixe o <code>sankhya-repo-updater-template.zip</code> <a href="https://drive.google.com/drive/folders/1eLTy76RPVhwBDwewOYfTvcU7Ci5V57yb?usp=drive_link">no Drive</a> e descompacte em qualquer pasta (não precisa ser dentro da pasta dos projetos).</li>
     <li><strong>Dê 2 cliques em <code>Instalar-Automatico.bat</code></strong>. Uma janela preta de console abre, mostra o progresso, e ao final aparece uma caixa de mensagem com o resultado. Aperte qualquer tecla pra fechar o console quando terminar. O script procura pastas com repositório git cujo remoto aponte para <code>gitlab.sankhya.com.br</code>. Pode levar 1–2 minutos na primeira vez.</li>
     <li><strong>Confira o resumo</strong>: Uma janela mostra quais repositórios foram encontrados e configurados, o horário da checagem diária e o nome do atalho criado na área de trabalho.</li>
   </ol>
